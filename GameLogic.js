@@ -4,7 +4,7 @@ let game = new Phaser.Game(800, 800, Phaser.CANVAS,
     'phaser-example', { preload: preload, create: create, update: update });
 
 function preload(){
-    game.load.image(`player`,  `sprites/player.png`);
+    game.load.image(`player`,  `Sprites/player.png`);
 }
 
 function create(){
@@ -17,7 +17,7 @@ function create(){
 }
 
 
-function move() {
+function update() {
     player.body.setZeroVelocity();
 
     if (cursors.left.isDown){
