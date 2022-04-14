@@ -10,9 +10,12 @@ let game = new Phaser.Game(800, 800, Phaser.CANVAS,
         {framewidth: 32, frameheight: 32};
         game.load.image(`coinobjective`, "Sprites/coinobjective"),
         {framewidth: 32, frameheight:32};
+        game.load,image(`tutorial`, `Tiles/tutorial.png`);
     }
     
     function create(){
+        game.add.imgae(320,320, `tutorial`);
+
         game.physics.startSystem(Phaser.Physics.ARCADE);
         player = game.add.sprite(400,400, `player`);
         enemy = game.add.sprite(250,250, 'enemy');
