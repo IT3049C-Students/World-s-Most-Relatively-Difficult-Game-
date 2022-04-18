@@ -1,8 +1,6 @@
 
 //testing purposes
-let game = new Phaser.Game(800, 800, Phaser.CANVAS, 
-    'phaser-example', { preload: preload, create: create, update: update });
-
+let game = new Phaser.Game(320,320)
     function preload(){
         game.load.image(`player`,  "Sprites/player.png"),
         {framewidth: 32, frameheight: 32};
