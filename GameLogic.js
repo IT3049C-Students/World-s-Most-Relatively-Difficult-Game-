@@ -1,6 +1,5 @@
 
 //testing purposes
-let game = new Phaser.Game(320,320);
 
     function preload(){
         game.load.spritesheet(`player`, "Sprites/player.png"),
@@ -9,14 +8,14 @@ let game = new Phaser.Game(320,320);
         {framewidth: 32, frameheight: 32};
         game.load.spritesheet(`coinobjective`, "Sprites/coinobjective"),
         {framewidth: 32, frameheight:32};
-        game.load,image(`tutorial`, `Tiles/tutorial.png`);
+        game.load,scene(`tutorial`, `Tiles\tutorial.png`);
 
         let scoreCount = 0;
 
     }
     
     function create(){
-        game.add.imgae(320,320, `tutorial`);
+        game.add.image(320,320, `tutorial`);
 
         game.physics.startSystem(Phaser.Physics.ARCADE);
         player = game.add.sprite(400,400, `player`);
@@ -87,3 +86,10 @@ function update() {
 //         }
 //     }
 }
+let game = new Phaser.Game({
+    width: 320,
+    height: 320,
+    backgroundImage: src = `Tiles\tutorial.png`,
+    physics: {default: `arcade`},
+    parent: `game`,
+    });
