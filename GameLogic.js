@@ -1,6 +1,7 @@
 
 //testing purposes
-let game = new Phaser.Game(320,320)
+let game = new Phaser.Game(320,320);
+
     function preload(){
         game.load.spritesheet(`player`, "Sprites/player.png"),
         {framewidth: 32, frameheight: 32};
@@ -44,18 +45,18 @@ function update() {
     }
 
 //enemy movement
-if(enemy and wall colide){
+// if(enemy and wall colide){
     
-    switch (enemyWall== true;){
-        case 1: 
-            enemy.body.moveDown(150);
-            break;
-        case 2:
-            enemy.body.moveUp(150);
-            break;
+//     switch (enemyWall== true){
+//         case 1: 
+//             enemy.body.moveDown(150);
+//             break;
+//         case 2:
+//             enemy.body.moveUp(150);
+//             break;
 
-    }
-}
+//     }
+// }
 
 
 
@@ -64,25 +65,25 @@ if(enemy and wall colide){
 
     //collect coin
     
- function CollectCoin() {
-    if (player colides with coin){
-        scoreCount = scoreCount + 1;
-    }
+//  function CollectCoin() {
+//     if (player colides with coin){
+//         scoreCount = scoreCount + 1;
+//     }
 
- }
+//  }
     //reached goal
-    function GoalZone(){
-    if (player colides with goal and scoreCount == 1){
-        ///Game Win
-        ///Take to next level
-    }
-    }
+//     function GoalZone(){
+//     if (player colides with goal and scoreCount == 1){
+//         ///Game Win
+//         ///Take to next level
+//     }
+//     }
 
-    //hit bad dot and reset
-    function ResetPosition(){
-        if(player and enemy colide){
-            //reset player position to the start of the map
+//     //hit bad dot and reset
+//     function ResetPosition(){
+//         if(player and enemy colide){
+//             //reset player position to the start of the map
 
-        }
-    }
+//         }
+//     }
 }
