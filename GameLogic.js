@@ -9,6 +9,9 @@ let game = new Phaser.Game(320,320)
         game.load.spritesheet(`coinobjective`, "Sprites/coinobjective"),
         {framewidth: 32, frameheight:32};
         game.load,image(`tutorial`, `Tiles/tutorial.png`);
+
+        let scoreCount = 0;
+
     }
     
     function create(){
@@ -38,5 +41,48 @@ function update() {
 
     else if (cursors.down,isDown){
         player.body.moveDown(150);
+    }
+
+//enemy movement
+if(enemy and wall colide){
+    
+    switch (enemyWall== true;){
+        case 1: 
+            enemy.body.moveDown(150);
+            break;
+        case 2:
+            enemy.body.moveUp(150);
+            break;
+
+    }
+}
+
+
+
+
+
+
+    //collect coin
+    
+ function CollectCoin() {
+    if (player colides with coin){
+        scoreCount = scoreCount + 1;
+    }
+
+ }
+    //reached goal
+    function GoalZone(){
+    if (player colides with goal and scoreCount == 1){
+        ///Game Win
+        ///Take to next level
+    }
+    }
+
+    //hit bad dot and reset
+    function ResetPosition(){
+        if(player and enemy colide){
+            //reset player position to the start of the map
+
+        }
     }
 }
