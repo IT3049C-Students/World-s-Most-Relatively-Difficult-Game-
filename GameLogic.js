@@ -2,11 +2,11 @@
 //testing purposes
 let game = new Phaser.Game(320,320)
     function preload(){
-        game.load.image(`player`,  "Sprites/player.png"),
+        game.load.spritesheet(`player`, "Sprites/player.png"),
         {framewidth: 32, frameheight: 32};
-        game.load.image('enemy', "Sprites/enemy.png"),
+        game.load.spritesheet('enemy', "Sprites/enemy.png"),
         {framewidth: 32, frameheight: 32};
-        game.load.image(`coinobjective`, "Sprites/coinobjective"),
+        game.load.spritesheet(`coinobjective`, "Sprites/coinobjective"),
         {framewidth: 32, frameheight:32};
         game.load,image(`tutorial`, `Tiles/tutorial.png`);
     }
@@ -28,7 +28,7 @@ function update() {
         player.body.moveLeft(150);
     }
 
-    else if (cusrors.right.isDown){
+    else if (cursors.right.isDown){
         player.body.moveRight(150);
     }
 
