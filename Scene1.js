@@ -1,26 +1,19 @@
-// import Align from "../util/Align";
-// import { AlignGrid } from "../util/alignGrid";
-// import { UIBlock } from "../util/UIBlock";
+class Scene1 extends Phaser.Scene {
+    constructor() {
+        super("bootGame")
+    }
 
-// export class Scene1 extends Phaser.Scene1 {
-//     constructor() {
-//         super("Scene1")
-//     }
+    preload() {
+        this.load.image("tutorial", "tiles/tutorial.png");
+    //     this.load.spritesheet("coinobjective", "src/Sprites/coinobjective");
+    //     this.load.spritesheet("enemy", "src/Sprites/enemy.png");
+    //     this.load.spritesheet("player", "src/Sprites/player.png");
+    }
+    create() {
+        this.add.text( 20, 20, "Loading game...");
+        this.scene.start("playGame");
+    }
+    update() {
 
-// preload() {
-//     this.load.image("Tiles", "src/Tiles/wholesheet1.png");
-//     this.load.tilemapTiledJSON('map','src/Json/tutorial..tmj')
-//     //this.wallsLayer.setCollisionByProperty({ collides: true});
-// }
-// create() {
-// const map = this.make.tilemap({key:"map", tileWidth: 32, tileHeight: 32});
-// const tileset = map.addTilesetImage("wholesheet1", "tiles");
-// const layer = map.createLayer("Ground", tileset, 0, 0);
-// const layer2 = map.createLayer("Walls", tileset, 0, 0);
-// //this.physics.add.collider(this.player, this.wallsLayer);
-// }
-// update() {
-
-// }
-// }
-// export default Scene1;
+    }
+}
