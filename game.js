@@ -1,8 +1,9 @@
  let config = {
-     width: 800,
-     height: 600,
+     width: 320,
+     height: 320,
      backgroundcolor: 0x000000,
-     scene: [Scene1,Scene2]
+     scene: [Scene1,Scene2],
+     pixelArt: true
  }
 //testing purposes
 let game = new Phaser.Game(config);
@@ -26,28 +27,28 @@ let game = new Phaser.Game(config);
         game.physics.startSystem(Phaser.Physics.ARCADE);
         player = game.add.sprite(400,400, `player`);
         enemy = game.add.sprite(250,250, 'enemy');
-        cursors = game.input.keyboard.createCursorKeys();
+        // cursors = game.input.keyboard.createCursorKeys();
     
     }
 
 function update() {
-    player.body.setZeroVelocity();
+    // player.body.setZeroVelocity();
 
-    if (cursors.left.isDown){
-        player.body.moveLeft(150);
-    }
+    // if (cursors.left.isDown){
+    //     player.body.moveLeft(150);
+    // }
 
-    else if (cursors.right.isDown){
-        player.body.moveRight(150);
-    }
+    // else if (cursors.right.isDown){
+    //     player.body.moveRight(150);
+    // }
 
-    if (cursors.up.isDown){
-        player.body.moveUp(150);
-    }
+    // if (cursors.up.isDown){
+    //     player.body.moveUp(150);
+    // }
 
-    else if (cursors.down,isDown){
-        player.body.moveDown(150);
-    }
+    // else if (cursors.down,isDown){
+    //     player.body.moveDown(150);
+    // }
 
 //enemy movement
 // if(enemy and wall colide){
