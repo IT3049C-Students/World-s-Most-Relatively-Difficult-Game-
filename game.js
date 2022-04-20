@@ -1,5 +1,11 @@
-
+ let config = {
+     width: 800,
+     height: 600,
+     backgroundcolor: 0x000000,
+     scene: [Scene1,Scene2]
+ }
 //testing purposes
+let game = new Phaser.Game(config);
 
     function preload(){
         game.load.spritesheet(`player`, "Sprites/player.png"),
@@ -8,7 +14,7 @@
         {framewidth: 32, frameheight: 32};
         game.load.spritesheet(`coinobjective`, "Sprites/coinobjective"),
         {framewidth: 32, frameheight:32};
-        game.load,scene(`tutorial`, `Tiles\tutorial.png`);
+        game.load,scene(`tutorial`, `Tiles/tutorial.png`);
 
         let scoreCount = 0;
 
@@ -85,11 +91,11 @@ function update() {
 
 //         }
 //     }
-}
-let game = new Phaser.Game({
-    width: 320,
-    height: 320,
-    backgroundImage: src = `Tiles\tutorial.png`,
-    physics: {default: `arcade`},
-    parent: `game`,
-    });
+// }
+// let game = new Phaser.Game({
+//     width: 320,
+//     height: 320,
+//     backgroundImage: src = `Tiles\tutorial.png`,
+//     physics: {default: `arcade`},
+//     parent: `game`,
+    }
