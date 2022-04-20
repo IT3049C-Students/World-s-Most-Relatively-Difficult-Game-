@@ -1,6 +1,6 @@
-
 let score = 0;
 let death = 0;
+let heldScore = 0;
 
 class Scene2 extends Phaser.Scene {
     constructor() {
@@ -38,10 +38,23 @@ create() {
 playerDies(player){
     player.x = config.width - 160;
     player.y = config.height / 2;
-    score = 0;
+    
     console.log("f in the chat my bruddas");
     death += 1;
     console.log(`Times you have died:` + death);
+    this.resetEnemy1position(this.enemy);
+    this.resetEnemy1position(this.enemy1);
+    this.resetEnemy2position(this.enemy2);
+    
+    if(score > heldScore){
+        sessionStorage.setItem("highScore", score);
+        heldScore = sessionStorage.getItem("highScore");
+                
+        }
+    document.getElementById(`highestScore`).innerHTML = "Highest Score is: " + heldScore;
+    document.getElementById("deathTally").innerHTML = "You have died: " + death + "times"; 
+    score = 0;
+    document.getElementById("currentScore").innerHTML = "Current Score is: " + score;
 }
 
 getBank(objective){
@@ -51,6 +64,7 @@ getBank(objective){
     var randomY = Phaser.Math.Between(10, 310);
     objective.x = randomX;
     objective.y = randomY;
+    document.getElementById('currentScore').innerHTML = "Current score is: " + score;
 }
 
 moveEnemy (enemy, speed){
@@ -104,12 +118,11 @@ movePlayer (player, speed){
 
     }
 update() {
-    this.moveEnemy(this.enemy, 5);
-    this.moveEnemy1(this.enemy1, 5);
-    this.moveEnemy2(this.enemy2, 5);
-    this.movePlayer(this.player, 5)
+    this.moveEnemy(this.enemy, 2);
+    this.moveEnemy1(this.enemy1, 2);
+    this.moveEnemy2(this.enemy2, 2);
+    this.movePlayer(this.player, 3)
 
     }
- 
-}
 
+}
