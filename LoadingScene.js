@@ -10,6 +10,7 @@ preload() {
     this.load.spritesheet("player", "src/Sprites/player.png");
 }
 create() {
+    this.scene.start("Scene1");
     this.add.image( 320, 320, "tutorial");
 }
 update() {
