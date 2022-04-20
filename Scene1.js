@@ -2,7 +2,6 @@ class Scene1 extends Phaser.Scene {
     constructor() {
         super("bootGame")
     }
-
  preload() {
      this.load.image("tutorial", "Tiles/tutorial.png");
      this.load.image("coinobjective", "Sprites/coinobjective.png");
@@ -17,3 +16,4 @@ update() {
 
 }
 }
+

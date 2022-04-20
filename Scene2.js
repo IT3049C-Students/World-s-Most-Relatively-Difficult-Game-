@@ -1,3 +1,4 @@
+
 let score = 0;
 let death = 0;
 
@@ -110,30 +111,5 @@ update() {
 
     }
  
-
- 
-    // if (enemy.y >= config.height){
-    //     walls = 1;
-    // }
-    // if (enemy.y <= config.height){
-    //     walls = 2;
-    // }
-    // switch (walls) {
-    //     case 1:
-    //         moveEnemy (enemy, speed){
-    //             enemy.y -= speed;
-    //         }
-    //         break;
-    
-    //     case 2:
-    //         moveEnemy (enemy, speed){
-    //             enemy.y += speed;
-    //         }
-    //         break;
-    //     default:
-    //         moveEnemy (enemy, speed){
-    //             enemy.y -= speed;
-    //         }
-    
-    // }
 }
+
