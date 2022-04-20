@@ -1,3 +1,6 @@
+let score = 0;
+let death = 0;
+
 class Scene2 extends Phaser.Scene {
     constructor() {
         super("playGame");
@@ -8,14 +11,45 @@ create() {
     this.background = this.add.image( 0, 0, 'tutorial');
     this.background.setOrigin(0,0);
 
-    this.player = this.add.image(config.width - 160, config.height / 2, "player" );
-    this.enemy = this.add.image(config.width - 80, config.height / 2, "enemy" );
-    this.enemy1 = this.add.image(config.width + 80, config.height / 2, "enemy" );
-    this.enemy2 = this.add.image(config.width - 40, config.height / 2, "enemy" );
-
+    this.player = this.physics.add.image(config.width - 160, config.height / 2, "player" );
+    this.enemy = this.physics.add.image(config.width - 80, config.height / 2, "enemy" );
+    this.enemy1 = this.physics.add.image(config.width + 80, config.height / 2, "enemy" );
+    this.enemy2 = this.physics.add.image(config.width - 40, config.height / 2, "enemy" );
+    this.objective = this.physics.add.image(config.width -75, config.height / 2, "coinobjective");
+    
     this.cursorKeys = this.input.keyboard.createCursorKeys();
+
+    this.physics.world.setBoundsCollision();
+    this.player.setCollideWorldBounds(true);
+
+    this.badGuys = this.physics.add.group();
+    this.badGuys.add(this.enemy);
+    this.badGuys.add(this.enemy1);
+    this.badGuys.add(this.enemy2);
+
+    this.physics.add.overlap(this.player, this.badGuys, this.playerDies, null, this);
+    this.physics.add.overlap(this.objective, this.player,  this.getBank, null, this);
     //let walls=1;
     //this.add.text(20,20,"Playing Game", {font: "25px Arial", fill: "yellow"});
+    
+}
+    
+playerDies(player){
+    player.x = config.width - 160;
+    player.y = config.height / 2;
+    score = 0;
+    console.log("f in the chat my bruddas");
+    death += 1;
+    console.log(`Times you have died:` + death);
+}
+
+getBank(objective){
+    score += 1;
+    console.log(score);
+    var randomX = Phaser.Math.Between(10, 310);
+    var randomY = Phaser.Math.Between(10, 310);
+    objective.x = randomX;
+    objective.y = randomY;
 }
 
 moveEnemy (enemy, speed){
@@ -53,20 +87,29 @@ resetEnemy2position(enemy2){
     enemy2.y = randomY;
 }
 
+movePlayer (player, speed){
+    if(this.cursorKeys.left.isDown) {
+        this.player.x -= speed;
+    }
+    else if (this.cursorKeys.right.isDown) {
+        this.player.x += speed;
+    }
+    else if (this.cursorKeys.up.isDown) {
+        this.player.y -= speed;
+    }
+    else if (this.cursorKeys.down.isDown) {
+        this.player.y += speed;
+    }
+
+    }
 update() {
     this.moveEnemy(this.enemy, 5);
     this.moveEnemy1(this.enemy1, 5);
     this.moveEnemy2(this.enemy2, 5);
-    this.movePlayerManager();
- }
+    this.movePlayer(this.player, 5)
 
- movePlayerManager(){
-     if(this.cursorKeys.left.isDown){
-         this.player.setVelocityX(-gameSettings.playerSpeed);
-     }else if (this.cursorKeys.right.isDown){
-         this.player.setVelocityX(gameSettings.playerSpeed);
-     }
- }
+    }
+ 
 
  
     // if (enemy.y >= config.height){

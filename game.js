@@ -1,37 +1,50 @@
+ let gameSettings= {
+     playerSpeed: 100,
+ }
+ 
  let config = {
      width: 320,
      height: 320,
      backgroundcolor: 0x000000,
      scene: [Scene1,Scene2],
-     pixelArt: true
+     pixelArt: true,
+     physics: {
+         default: "arcade",
+         arcade: {
+             debug: false,
+             debugShowVelocity: false
+         }
+     }
  }
 //testing purposes
 let game = new Phaser.Game(config);
 
-    function preload(){
-        game.load.spritesheet(`player`, "Sprites/player.png"),
-        {framewidth: 32, frameheight: 32};
-        game.load.spritesheet('enemy', "Sprites/enemy.png"),
-        {framewidth: 32, frameheight: 32};
-        game.load.spritesheet(`coinobjective`, "Sprites/coinobjective"),
-        {framewidth: 32, frameheight:32};
-        game.load,scene(`tutorial`, `Tiles/tutorial.png`);
+    // function preload(){
+    //     game.load.spritesheet(`player`, "Sprites/player.png"),
+    //     {framewidth: 32, frameheight: 32};
+    //     game.load.spritesheet('enemy', "Sprites/enemy.png"),
+    //     {framewidth: 32, frameheight: 32};
+    //     game.load.spritesheet(`coinobjective`, "Sprites/coinobjective"),
+    //     {framewidth: 32, frameheight:32};
+    //     game.load,scene(`tutorial`, `Tiles/tutorial.png`);
 
-        let scoreCount = 0;
+    //     let scoreCount = 0;
 
-    }
+    // }
     
-    function create(){
-        game.add.image(320,320, `tutorial`);
+    // function create(){
+    //     game.add.image(320,320, `tutorial`);
 
-        game.physics.startSystem(Phaser.Physics.ARCADE);
-        player = game.add.sprite(400,400, `player`);
-        enemy = game.add.sprite(250,250, 'enemy');
-        // cursors = game.input.keyboard.createCursorKeys();
+    //     game.physics.startSystem(Phaser.Physics.ARCADE);
+    //     player = game.add.sprite(400,400, `player`);
+    //     enemy = game.add.sprite(250,250, 'enemy');
+    //     // cursors = game.input.keyboard.createCursorKeys();
     
-    }
+    // }
 
-function update() {
+
+
+//function update() {
     // player.body.setZeroVelocity();
 
     // if (cursors.left.isDown){
@@ -99,4 +112,4 @@ function update() {
 //     backgroundImage: src = `Tiles\tutorial.png`,
 //     physics: {default: `arcade`},
 //     parent: `game`,
-    }
+    //}

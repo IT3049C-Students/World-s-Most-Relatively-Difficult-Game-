@@ -5,7 +5,7 @@ class Scene1 extends Phaser.Scene {
 
  preload() {
      this.load.image("tutorial", "Tiles/tutorial.png");
-     this.load.image("coinobjective", "src/Sprites/coinobjective");
+     this.load.image("coinobjective", "Sprites/coinobjective.png");
      this.load.image("enemy", "Sprites/enemy.png");
      this.load.image("player", "Sprites/player.png");
  }
