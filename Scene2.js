@@ -52,7 +52,7 @@ playerDies(player){
                 
         }
     document.getElementById(`highestScore`).innerHTML = "Highest Score is: " + heldScore;
-    document.getElementById("deathTally").innerHTML = "You have died: " + death + "times"; 
+    document.getElementById("deathTally").innerHTML = "You have died: " + death + " times"; 
     score = 0;
     document.getElementById("currentScore").innerHTML = "Current Score is: " + score;
 }
@@ -118,10 +118,10 @@ movePlayer (player, speed){
 
     }
 update() {
-    this.moveEnemy(this.enemy, 2);
-    this.moveEnemy1(this.enemy1, 2);
-    this.moveEnemy2(this.enemy2, 2);
-    this.movePlayer(this.player, 3)
+    this.moveEnemy(this.enemy, 4);
+    this.moveEnemy1(this.enemy1, 4);
+    this.moveEnemy2(this.enemy2, 4);
+    this.movePlayer(this.player, 5)
 
     }
 
